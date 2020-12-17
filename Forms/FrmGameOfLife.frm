@@ -5,6 +5,7 @@ Begin VB.Form FrmGameOfLife
    ClientLeft      =   60
    ClientTop       =   450
    ClientWidth     =   10455
+   Icon            =   "FrmGameOfLife.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
    ScaleHeight     =   8295
@@ -188,7 +189,6 @@ Begin VB.Form FrmGameOfLife
       Width           =   855
    End
    Begin VB.PictureBox PBGOL 
-      AutoRedraw      =   -1  'True
       BackColor       =   &H00FFFFFF&
       DrawStyle       =   6  'Innen ausgefüllt
       FillColor       =   &H000000FF&

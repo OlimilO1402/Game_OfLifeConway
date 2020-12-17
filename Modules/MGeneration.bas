@@ -106,6 +106,7 @@ Public Sub DrawGeneration(this As TGeneration, Field As TField, aPB As PictureBo
                     c = Field.FieldColor
                 End If
                 aPB.FillColor = c
+                aPB.ForeColor = c
                 With Field.Arr(i, j)
                     If Field.LifeForm = LifeFormRectangle Then
                         If Not Field.bFixPtSize Then
