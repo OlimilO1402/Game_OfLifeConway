@@ -302,9 +302,11 @@ Private Sub Form_Unload(Cancel As Integer)
 End Sub
 
 Public Sub SetCounter(ByVal CountGenerations As Long)
+Try: On Error GoTo Catch
     Dim d As Double: d = Timer - m_Timer
     m_Timer = Timer
     Me.Caption = "Generations: " & CStr(CountGenerations) & "   " & CStr(CLng(m_GOL.GenTilDoEv / d)) & " pro sec"
+Catch:
 End Sub
 
 Private Sub BtnStartStop_Click()
