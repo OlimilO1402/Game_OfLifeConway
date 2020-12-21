@@ -305,7 +305,7 @@ Public Sub SetCounter(ByVal CountGenerations As Long)
 Try: On Error GoTo Catch
     Dim d As Double: d = Timer - m_Timer
     m_Timer = Timer
-    Me.Caption = "Generations: " & CStr(CountGenerations) & "   " & CStr(CLng(m_GOL.GenTilDoEv / d)) & " pro sec"
+    Me.Caption = "Generations: " & CStr(CountGenerations) & "   " & CStr(CLng(m_GOL.GenTilDoEv / d)) & " FPS"
 Catch:
 End Sub
 
@@ -368,8 +368,8 @@ Private Sub BtnSetLifeRule_Click()
     End If
 End Sub
 Private Sub BtnCreateNewField_Click()
-    Dim X As Long
-    Dim Y As Long
+    Dim x As Long
+    Dim y As Long
     If Len(TxtX.Text) = 0 Then Exit Sub
     If Len(TxtY.Text) = 0 Then Exit Sub
     If Not IsNumeric(TxtX.Text) Then
@@ -380,9 +380,9 @@ Private Sub BtnCreateNewField_Click()
         MsgBox "Bitte Zahl eingeben!"
         Exit Sub
     End If
-    X = CLng(TxtX.Text)
-    Y = CLng(TxtY.Text)
-    Call MGameOfLife.New_GameOfLife(m_GOL, X, Y, MLifeRule.New_LifeRule(LblLifeRule.Caption))
+    x = CLng(TxtX.Text)
+    y = CLng(TxtY.Text)
+    Call MGameOfLife.New_GameOfLife(m_GOL, x, y, MLifeRule.New_LifeRule(LblLifeRule.Caption))
     Call BtnDrawNew_Click
 End Sub
 Private Sub BtnSaveGeneration_Click()
@@ -424,8 +424,8 @@ Private Sub BtnClear_Click()
     Call BtnDrawNew_Click
 End Sub
 
-Private Sub PBGOL_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
-    Dim pt As Point: pt = MField.GetIndexPoint(m_GOL.Field, X, Y)
+Private Sub PBGOL_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+    Dim pt As Point: pt = MField.GetIndexPoint(m_GOL.Field, x, y)
     Call MGameOfLife.SwitchLife(m_GOL, pt)
     With m_GOL
         Call MGeneration.DrawIndividual(.pThis.Generation, .Field, Me.PBGOL, pt)
