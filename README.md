@@ -4,7 +4,6 @@ I immediately started this project in Aug.2008 when I encountered cellular autom
 You can play around with different death-life-rules. The original rule of Conway was 23/3
 If you try rules 234/3 or 2346/3 you get structures that very much look like amazing mazes.
 If you save it to a file you can import it in GamePathfinder. 
-Maybe also have a look at the pathfinder project here:
-https://github.com/OlimilO1402/GamePathFinder
+Maybe also have a look at the pathfinder project [here](https://github.com/OlimilO1402/GamePathFinder).
 
 ![GameOfLifeConway Image](Resources/Pictures/GameOfLifeConway.png "GameOfLifeConway Image")
