@@ -1,16 +1,24 @@
 VERSION 5.00
 Begin VB.Form FrmGameOfLife 
    Caption         =   "Conway's Game Of Life "
-   ClientHeight    =   8295
+   ClientHeight    =   8550
    ClientLeft      =   60
    ClientTop       =   450
-   ClientWidth     =   10455
+   ClientWidth     =   10695
    Icon            =   "FrmGameOfLife.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
-   ScaleHeight     =   8295
-   ScaleWidth      =   10455
+   ScaleHeight     =   8550
+   ScaleWidth      =   10695
    StartUpPosition =   3  'Windows-Standard
+   Begin VB.CommandButton BtnInfo 
+      Caption         =   "Info"
+      Height          =   375
+      Left            =   120
+      TabIndex        =   29
+      Top             =   7440
+      Width           =   1935
+   End
    Begin VB.CommandButton BtnClear 
       Caption         =   "Clear"
       Height          =   375
@@ -193,19 +201,19 @@ Begin VB.Form FrmGameOfLife
       DrawStyle       =   6  'Innen ausgefüllt
       FillColor       =   &H000000FF&
       ForeColor       =   &H00004000&
-      Height          =   8175
+      Height          =   8535
       Left            =   2160
-      ScaleHeight     =   8115
-      ScaleWidth      =   8115
+      ScaleHeight     =   8475
+      ScaleWidth      =   8475
       TabIndex        =   16
       Top             =   0
-      Width           =   8175
+      Width           =   8535
    End
    Begin VB.Label Label6 
       Height          =   615
       Left            =   120
       TabIndex        =   19
-      Top             =   7560
+      Top             =   7800
       Width           =   1935
    End
    Begin VB.Label Label2 
@@ -422,6 +430,10 @@ End Sub
 Private Sub BtnClear_Click()
     Call MGameOfLife.Clear(m_GOL)
     Call BtnDrawNew_Click
+End Sub
+Private Sub BtnInfo_Click()
+    MsgBox App.CompanyName & " " & App.EXEName & " v" & App.Major & "." & App.Minor & "." & App.Revision & vbCrLf & _
+           App.FileDescription, vbOKOnly Or vbInformation
 End Sub
 
 Private Sub PBGOL_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
